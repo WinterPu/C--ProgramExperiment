@@ -1,0 +1,33 @@
+# Project: 410321155-HW4
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o HashTable.o $(RES)
+LINKOBJ  = main.o HashTable.o $(RES)
+LIBS =  -L"F:/MinGW/lib"  
+INCS =  -I"F:/MinGW/include" 
+CXXINCS =  -I"F:/MinGW/include" 
+BIN  = 410321155-HW4.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before 410321155-HW4.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "410321155-HW4.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+HashTable.o: HashTable.c
+	$(CC) -c HashTable.c -o HashTable.o $(CFLAGS)

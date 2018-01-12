@@ -1,0 +1,32 @@
+cd /home/winter/Downloads/Bison/myfile/test/410321155
+bison -d -oMiniJ_yacc.c MiniJ_yacc.y
+gcc -c MiniJ_yacc.c
+gcc -c MiniJ_lex.c
+gcc -c main.c
+gcc -o a.out MiniJ_lex.o main.o MiniJ_yacc.o
+
+
+cd /home/winter/Downloads/Bison/myfile/test/410321155-PuWentao-Bison
+bison -d -oMiniJ_yacc.c MiniJ_yacc.y
+gcc -c MiniJ_yacc.c
+gcc -c MiniJ_lex.c
+gcc -c main.c
+gcc -o parse.exe MiniJ_lex.o main.o MiniJ_yacc.o
+
+parse.exe <test1.java >test1.out
+//Input test1.java to parse.exe and Output to test1.out
+
+class Factorial {
+public static void main(String[] a) {
+System.out.println(new Fac().ComputeFac(10));
+}
+}
+class Fac {
+public int ComputeFac(int num) {
+int num_aux;
+if (num < 1)
+num_aux = 1;
+else
+num_aux = num * (this.ComputeFac(num -1));
+return num_aux;
+}

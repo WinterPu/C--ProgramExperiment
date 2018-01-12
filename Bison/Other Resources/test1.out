@@ -1,0 +1,34 @@
+exp =>NEW ID LP RP
+exp =>INTEGER_LITERAL
+explist =>exp exprest*
+exp => exp LP  exp RP
+exp =>exp DOT exp
+statement =>PRINT LP exp RP SEMI
+mainclass => CLASS ID LB PUBLIC STATIC VOID MAIN LP STRING LSP RSP ID RP LB  statement* RB RB 
+type =>INT
+type =>INT
+formal  =>type ID formalrest*
+type =>INT
+vardecl =>type ID SEMI
+exp =>ID
+exp =>INTEGER_LITERAL
+exp =>exp  LT exp
+exp =>INTEGER_LITERAL
+statement =>ID ASSIGN exp SEMI
+exp =>ID
+exp =>THIS
+exp =>ID
+exp =>INTEGER_LITERAL
+exp =>exp MINUS exp
+explist =>exp exprest*
+exp => exp LP  exp RP
+exp =>exp DOT exp
+exp =>LP exp RP
+exp =>exp TIMES exp
+statement =>ID ASSIGN exp SEMI
+statement =>IF LP exp RP statement ELSE statement
+exp =>ID
+PUBLIC type ID LP formallist RP LB vardecl* statement* RETURN exp SEMI RB
+classdel =>CLASS ID LB vardecl* mathoddecl* RB
+prog =>mainclass classdel* 
+********Parsed OK!**********
